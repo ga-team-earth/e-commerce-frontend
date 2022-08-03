@@ -30,6 +30,14 @@ Have a "Shop" page that effectively renders all items seeded in the database
 
 Have a functioning cart that can successfully add(post) items, remove(delete) items, and Update items
 
+## Stretch Goals
+A working navigation with a search function
+
+Have the contact form lead somewhere and/or return a confirmation to the user
+
+Have a functioning checkout process with possible payment processing 
+
+Cart and checkout animations
 
 ## Wireframes
 
@@ -39,14 +47,7 @@ Have a functioning cart that can successfully add(post) items, remove(delete) it
 <img width="535" alt="Screen Shot 2022-08-03 at 2 08 08 PM" src="https://user-images.githubusercontent.com/106497171/182712829-e5488ab5-ac76-4d9f-8f40-9c9300335235.png">
 
 
-## Stretch Goals
-A working navigation with a search function
-
-Have the contact form lead somewhere and/or return a confirmation to the user
-
-Have a functioning checkout process with possible payment processing 
-
-Cart and checkout animations 
+ 
 
 
 
