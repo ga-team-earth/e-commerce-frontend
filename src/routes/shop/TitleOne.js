@@ -6,14 +6,16 @@ import axios from 'axios'
 const TitleOne = () => {
 
   const [artItems, setArtItems] = useState([])
+  const [titleState, setTitleState] = useState([])
+  
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/art')
       .then(res => {
         let data = res.data
         let titleOne = data[0]
-        console.log(titleOne)
         setArtItems(titleOne.items)
+        setTitleState(titleOne)
       })
   }, [])
 
@@ -24,9 +26,10 @@ const TitleOne = () => {
       {/* Look into multiple components for displaying the data */}
 
       <ul className='titleOne'>
-        {artItems.map((artItem) => (
+        <h1>{titleState.title}</h1>
+        {artItems.map((artItem, index) => (
           <>
-            <ul>
+            <ul key={index}>
               {artItem.name}
               {/* <img src={artItem.imageUrl} alt='blah'></img> */}
             </ul>
