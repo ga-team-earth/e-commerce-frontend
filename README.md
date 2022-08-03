@@ -31,7 +31,12 @@ Have a "Shop" page that effectively renders all items seeded in the database
 Have a functioning cart that can successfully add(post) items, remove(delete) items, and Update items
 
 
+## Wireframes
 
+<img width="533" alt="Screen Shot 2022-08-03 at 2 08 00 PM" src="https://user-images.githubusercontent.com/106497171/182712952-647a9710-41c0-4c30-b906-8f40c69e90fe.png">
+<img width="531" alt="Screen Shot 2022-08-03 at 2 08 24 PM" src="https://user-images.githubusercontent.com/106497171/182712522-b941c4cd-3b2e-41ab-80f3-99e5273d4d25.png">
+<img width="538" alt="Screen Shot 2022-08-03 at 2 08 14 PM" src="https://user-images.githubusercontent.com/106497171/182712546-3e28db6b-e032-4fdc-8065-56ca6ebf9c70.png">
+<img width="535" alt="Screen Shot 2022-08-03 at 2 08 08 PM" src="https://user-images.githubusercontent.com/106497171/182712829-e5488ab5-ac76-4d9f-8f40-9c9300335235.png">
 
 
 ## Stretch Goals
@@ -42,4 +47,6 @@ Have the contact form lead somewhere and/or return a confirmation to the user
 Have a functioning checkout process with possible payment processing 
 
 Cart and checkout animations 
+
+
 
