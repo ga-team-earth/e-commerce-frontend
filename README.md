@@ -1,3 +1,13 @@
+## Project Idea
+
+We are making an online storefront for selling art prints, called "The Blank Canvas". We want people to be able to populate a cart and checkout from the store.
+
+## User Stories
+
+- I am a retired architect. Having building my perfect house, it's time to fill out all of the empty walls!
+
+- I never know what to purchase for gifts. Everyone loves an art print! I own several.
+
 
 ## MVP
 Build a functioning Art e-commerce app
@@ -32,14 +42,4 @@ Have the contact form lead somewhere and/or return a confirmation to the user
 Have a functioning checkout process with possible payment processing 
 
 Cart and checkout animations 
-
-## Project Idea
-
-We are making an online storefront for selling art prints, called "The Blank Canvas". We want people to be able to populate a cart and checkout from the store.
-
-## User Stories
-
-- I am a retired architect. Having building my perfect house, it's time to fill out all of the empty walls!
-
-- I never know what to purchase for gifts. Everyone loves an art print! I own several.
 
