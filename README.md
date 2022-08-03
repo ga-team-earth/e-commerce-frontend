@@ -8,6 +8,18 @@ We are making an online storefront for selling art prints, called "The Blank Can
 
 - I never know what to purchase for gifts. Everyone loves an art print! I own several.
 
+- As a user, I would like to seemlessly navigate through collections of paintings
+
+- As a user, I would like to be able to read discriptions and outlooks of specific paintings
+
+- As a user, I would like to save paintings that I like or hope to purchase in my own personal cart or saved list
+
+- As a user, I would like a quick and easy cart, and checkout process
+
+- As a user, I would like to possibly look for specific paintings by name, possibly even type or catagory.
+
+- As a user, I would like to be able to submit my own paintings for review and possible sale *Super Stretch* 
+
 
 ## MVP
 Build a functioning Art e-commerce app
@@ -38,6 +50,16 @@ Have the contact form lead somewhere and/or return a confirmation to the user
 Have a functioning checkout process with possible payment processing 
 
 Cart and checkout animations
+
+Admin Page
+
+Have better social media inclusion
+
+Be able to store user data for current or future
+
+Make painting database descriptions more robust
+
+Posiibly make indiviual painting pages
 
 ## Wireframes
 
