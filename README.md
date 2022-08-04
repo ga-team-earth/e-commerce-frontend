@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+## Project Idea
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We are making an online storefront for selling art prints, called "The Blank Canvas". We want people to be able to populate a cart and checkout from the store.
 
-## Available Scripts
+## User Stories
 
-In the project directory, you can run:
+- I am a retired architect. Having building my perfect house, it's time to fill out all of the empty walls!
 
-### `npm start`
+- I never know what to purchase for gifts. Everyone loves an art print! I own several.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- As a user, I would like to seemlessly navigate through collections of paintings
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- As a user, I would like to be able to read discriptions and outlooks of specific paintings
 
-### `npm test`
+- As a user, I would like to save paintings that I like or hope to purchase in my own personal cart or saved list
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user, I would like a quick and easy cart, and checkout process
 
-### `npm run build`
+- As a user, I would like to possibly look for specific paintings by name, possibly even type or catagory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a user, I would like to be able to submit my own paintings for review and possible sale *Super Stretch* 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## MVP
+Build a functioning Art e-commerce app
 
-### `npm run eject`
+Front-end & Back-end are connected
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A working app with User-Friendly Navigation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Have proper functioning routes that lead to desired location
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A pleasing asthetic with a consistent theme throughout the entire app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Have a responsive layout with consideration to product image quality
 
-## Learn More
+Have an "About" page highlighting specific and notable details abut the page and items
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Have a "Contact" page so that users can contact with any questions or inquiries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Have a "Shop" page that effectively renders all items seeded in the database
 
-### Code Splitting
+Have a functioning cart that can successfully add(post) items, remove(delete) items, and Update items
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Stretch Goals
+A working navigation with a search function
 
-### Analyzing the Bundle Size
+Have the contact form lead somewhere and/or return a confirmation to the user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Have a functioning checkout process with possible payment processing 
 
-### Making a Progressive Web App
+Cart and checkout animations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Admin Page
 
-### Advanced Configuration
+Have better social media inclusion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Be able to store user data for current or future
 
-### Deployment
+Make painting database descriptions more robust
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Posiibly make indiviual painting pages
 
-### `npm run build` fails to minify
+## Wireframes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img width="533" alt="Screen Shot 2022-08-03 at 2 08 00 PM" src="https://user-images.githubusercontent.com/106497171/182712952-647a9710-41c0-4c30-b906-8f40c69e90fe.png">
+<img width="531" alt="Screen Shot 2022-08-03 at 2 08 24 PM" src="https://user-images.githubusercontent.com/106497171/182712522-b941c4cd-3b2e-41ab-80f3-99e5273d4d25.png">
+<img width="538" alt="Screen Shot 2022-08-03 at 2 08 14 PM" src="https://user-images.githubusercontent.com/106497171/182712546-3e28db6b-e032-4fdc-8065-56ca6ebf9c70.png">
+<img width="535" alt="Screen Shot 2022-08-03 at 2 08 08 PM" src="https://user-images.githubusercontent.com/106497171/182712829-e5488ab5-ac76-4d9f-8f40-9c9300335235.png">
+
+
+ 
+
+
+
