@@ -30,7 +30,7 @@ A working app with User-Friendly Navigation
 
 Have proper functioning routes that lead to desired location
 
-A pleasing asthetic with a consistent theme throughout the entire app
+A pleasing aesthetic with a consistent theme throughout the entire app
 
 Have a responsive layout with consideration to product image quality
 
@@ -59,7 +59,7 @@ Be able to store user data for current or future
 
 Make painting database descriptions more robust
 
-Posiibly make indiviual painting pages
+Possibly make individual painting pages
 
 ## Wireframes
 
