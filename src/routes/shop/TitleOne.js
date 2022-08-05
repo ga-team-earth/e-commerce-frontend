@@ -10,7 +10,7 @@ const TitleOne = () => {
   
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/art')
+    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
       .then(res => {
         let data = res.data
         let titleOne = data[0]
