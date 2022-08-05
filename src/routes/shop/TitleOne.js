@@ -12,6 +12,21 @@ const TitleOne = () => {
   const [widthTwo, setWidthTwo] = useState(0);
   const carouselTwo = useRef();
 
+  useEffect(() => {
+    console.log(carouselTwo.current.scrollWidth, carouselTwo.current.offsetWidth )
+    setWidthTwo(carouselTwo.current.scrollWidth - carouselTwo.current.offsetWidth)
+  }, [])
+  
+
+  useEffect(() => {
+    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
+      .then(res => {
+        let data = res.data
+        let titleOne = data[0]
+        setArtItems(titleOne.items)
+        setTitleState(titleOne)
+      })
+  }, [])
 
   return (
     <>
