@@ -1,7 +1,19 @@
-.test {
-    color: black;
+.entire-box {
+    display: flex;
+    flex-direction: column;
 }
 
-body {
-    color: black,
+.box {
+    display: flex;
+    flex-direction: row;
+    cursor: grab;
+    overflow: hidden;
 }
+
+.item-two {
+    height: 26rem;
+    min-width: 100rem;
+    padding-bottom: 50px;
+    display: flex;
+}
+
