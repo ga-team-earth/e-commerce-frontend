@@ -12,7 +12,6 @@ const about = () => {
       <div className='text-container'>
         <div className='top-heading'>
           <h2>Francisco & Anette Diopani</h2>
-          <hr />
         </div>
         <div className='story'>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, soluta possimus voluptas voluptatem minus, excepturi tenetur amet iusto sapiente culpa modi sed distinctio delectus? Tenetur corrupti ullam consequatur. Veritatis, repudiandae?
