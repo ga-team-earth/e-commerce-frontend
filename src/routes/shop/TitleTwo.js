@@ -9,7 +9,23 @@ const TitleTwo = () => {
   const [artItems, setArtItems] = useState([])
   const [titleState, setTitleState] = useState([])
   const [widthTwo, setWidthTwo] = useState(0);
+  const carouselTwo = useRef();
+  
+  useEffect(() => {
+    console.log(carouselTwo.current.scrollWidth, carouselTwo.current.offsetWidth )
+    setWidthTwo(carouselTwo.current.scrollWidth - carouselTwo.current.offsetWidth)
+  }, [])
 
+  useEffect(() => {
+    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
+      .then(res => {
+        let data = res.data
+        let titleTwo = data[1]
+        setArtItems(titleTwo.items)
+        setTitleState(titleTwo)
+
+      })
+  }, [])
 
   return (
     <>
