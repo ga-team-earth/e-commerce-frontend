@@ -6,6 +6,26 @@ import {motion} from "framer-motion";
 
 const TitleThree= () => {
 
+  const [artItems, setArtItems] = useState([])
+  const [titleState, setTitleState] = useState([])
+  const [widthTwo, setWidthTwo] = useState(0);
+  const carouselTwo = useRef();
+
+  useEffect(() => {
+    console.log(carouselTwo.current.scrollWidth, carouselTwo.current.offsetWidth )
+    setWidthTwo(carouselTwo.current.scrollWidth - carouselTwo.current.offsetWidth)
+  }, [])
+
+  useEffect(() => {
+    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
+      .then(res => {
+        let data = res.data
+        let titleThree = data[2]
+        setArtItems(titleThree.items)
+        setTitleState(titleThree)
+      })
+  }, [])
+  
   return (
     <>
     <h1 className='title'>{titleState.title}</h1>
