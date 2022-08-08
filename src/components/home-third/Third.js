@@ -1,17 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react'
 import "./Third.scss"
 import {motion} from "framer-motion";
+import { useScroll } from "../useScroll";
+import { fade } from "../../Animation";
 
 const Third = () => {
     const [width, setWidth] = useState(0);
     const carousel = useRef();
+    const [element, controls] = useScroll();
 
     useEffect(() => {
-      console.log(carousel.current.scrollWidth, carousel.current.offsetWidth)
-      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+      setWidth(1400)
     }, [])
-  return (
 
+  return (
+    <motion.div variants={fade} animate={controls} initial="hidden" ref={element}>
     <motion.div ref={carousel} className='carousel' whileTap={{cursor: "grabbing"}}>
       <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className="inner-carousel">
         <div className='item'>
@@ -23,6 +26,7 @@ const Third = () => {
           <img src="https://images.unsplash.com/photo-1577083287809-1c229a750bba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80" alt="art"/>
         </div>
         </motion.div>
+      </motion.div>
       </motion.div>
   )
 }
