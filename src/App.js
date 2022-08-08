@@ -6,6 +6,7 @@ import Contact from "./routes/contact/Contact";
 import Nav from "./routes/navigation/Navigation";
 import "./App.scss"
 
+
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/Shop" element={<Shop />} />
+        <Route path="Shop/*" element={<Shop />}/>
       </Route>
     </Routes>
     </div>

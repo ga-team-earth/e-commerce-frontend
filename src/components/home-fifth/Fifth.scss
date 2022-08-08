@@ -4,6 +4,9 @@
     justify-content: center;
     flex-direction: row;
     padding: 5px;
+}
+
+.footer-container{
     background-color: #A48F78; 
 }
 
@@ -12,14 +15,41 @@
     font-size: 1.5rem;
 }
 
+.footer-container a:hover {
+  color: white;
+}
+
 a {
     color: white;
   }
+
+  a:link {
+    color: white;
+  }
+  
+  a:visited {
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
+  
+  a:active {
+    color: white;
+  }
+
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: white;
+}
 
 h3{
     background-color: #A48F78; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5px;
+    padding-top: 10px;
+    color: white;
+    font-family: 'Taviraj', serif;
 }
