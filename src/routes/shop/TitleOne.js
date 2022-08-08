@@ -13,6 +13,7 @@ const TitleOne = () => {
   const [titleState, setTitleState] = useState([])
   const [widthTwo, setWidthTwo] = useState(0);
   const carouselTwo = useRef();
+  const [cartItem, setCartItem] = useState({})
 
   useEffect(() => {
     setWidthTwo(1270)
@@ -20,7 +21,7 @@ const TitleOne = () => {
   
 
   useEffect(() => {
-    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
+    axios.get('https://e-commerce-earth.herokuapp.com/art')
       .then(res => {
         let data = res.data
         let titleOne = data[0]
@@ -29,6 +30,18 @@ const TitleOne = () => {
       })
   }, [])
 
+  const handleClick = function(event) {
+    // console.log(event.target)
+    // console.log(event.target.getAttribute('item'))
+    // setCartItem({...cartItem, [event.target.id]: event.target.value})
+    let artName = event.target.getAttribute('item')
+    setCartItem({title: artName})
+    // console.log(cartItem)
+    axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+  }
+
+  console.log(cartItem)
+
   return (
     <>
         <motion.h1 exit="exit" variants={titleAnim} initial="hidden" animate="show" className='title'>{titleState.title}</motion.h1>
@@ -36,12 +49,12 @@ const TitleOne = () => {
         <motion.div drag="x" dragConstraints={{right: 0, left: -widthTwo}} className="inner-carousel-two">
         <div className='item-two'>
         {artItems.map((artItem, index) => (
-        <motion.div whileHover={{scale: .9}}  className='product-card-container'>
+        <motion.div whileHover={{scale: .9}}  className='product-card-container' key={index}>
             <img src={artItem.imageUrl} alt="flowers" />
             <div className='footer'>
               <span className='name' key={index}>{artItem.name}</span>
               <span className='price'>${artItem.price}</span>
-              <button>Add to Cart</button>
+              <button onClick={handleClick} item={artItem.name} >Add to Cart</button>
             </div>
         </motion.div>
       )

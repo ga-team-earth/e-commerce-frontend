@@ -18,7 +18,7 @@ const TitleThree= () => {
   }, [])
 
   useEffect(() => {
-    axios.get('https://e-commerce-earth.herokuapp.com/api/art')
+    axios.get('https://e-commerce-earth.herokuapp.com/art')
       .then(res => {
         let data = res.data
         let titleThree = data[2]
@@ -34,7 +34,7 @@ const TitleThree= () => {
     <motion.div drag="x" dragConstraints={{right: 0, left: -widthTwo}} className="inner-carousel-two">
     <div className='item-two'>
     {artItems.map((artItem, index) => (
-    <motion.div whileHover={{scale: .9}} className='product-card-container'>
+    <motion.div whileHover={{scale: .9}} className='product-card-container' key={index}>
         <img src={artItem.imageUrl} alt="flowers" />
         <div className='footer'>
           <span className='name' key={index}>{artItem.name}</span>
