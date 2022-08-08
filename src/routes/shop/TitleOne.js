@@ -13,7 +13,7 @@ const TitleOne = () => {
   const [titleState, setTitleState] = useState([])
   const [widthTwo, setWidthTwo] = useState(0);
   const carouselTwo = useRef();
-  const [cartItem, setCartItem] = useState([])
+  const [cartItem, setCartItem] = useState({})
 
   useEffect(() => {
     setWidthTwo(1270)
@@ -30,10 +30,17 @@ const TitleOne = () => {
       })
   }, [])
 
-  const handleClick = function() {
-    setCartItem()
+  const handleClick = function(event) {
+    // console.log(event.target)
+    // console.log(event.target.getAttribute('item'))
+    // setCartItem({...cartItem, [event.target.id]: event.target.value})
+    let artName = event.target.getAttribute('item')
+    setCartItem({title: artName})
+    // console.log(cartItem)
     axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
   }
+
+  console.log(cartItem)
 
   return (
     <>
@@ -47,7 +54,7 @@ const TitleOne = () => {
             <div className='footer'>
               <span className='name' key={index}>{artItem.name}</span>
               <span className='price'>${artItem.price}</span>
-              <button onClick={handleClick}>Add to Cart</button>
+              <button onClick={handleClick} item={artItem.name} >Add to Cart</button>
             </div>
         </motion.div>
       )
