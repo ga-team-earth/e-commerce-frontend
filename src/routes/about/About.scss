@@ -4,16 +4,18 @@
     flex-direction: row;
     align-items: center;
     background-color: #A48F78;
-    padding-top: 5rem;
-    padding-bottom: 6.5rem;
+    height: 95vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 .text-container{
-    padding-left: 3rem;
+    padding-left: 5rem;
 }
 
 .top-heading{
     padding-top: 3rem;
+    color: white;
+    font-family: 'Taviraj', serif;
 }
 
 .couple{
@@ -25,11 +27,5 @@
 .story{
     width: 40vw;
     padding-top: 2rem;
-}
-
-.about-qoute{
     color: white;
-    padding-bottom: 1.5rem;
-    font-size: 2rem;
-    font-family: 'Marck Script', cursive;
 }

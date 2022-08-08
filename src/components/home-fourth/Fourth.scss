@@ -4,6 +4,12 @@
     flex-direction: row;
 }
 
+.small-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
 .review{
     color: white;
     margin-top: 5rem;
@@ -12,4 +18,25 @@
     padding: 20px;
     background-color:#A3947F;
     border-radius: 16px;
+    width: 20rem;
+    font-family: 'Taviraj', serif;
+}
+
+.review-bio{
+    font-size: 18px;
+    padding-top: .5rem;
+}
+
+.customerName{
+    padding-top: 1rem;
+}
+
+.image-stars{
+    display: flex;
+    flex-direction: row;
+}
+
+.stars{
+    padding-left: 2rem;
+    padding-top: 1rem;
 }

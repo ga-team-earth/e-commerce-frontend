@@ -1,12 +1,25 @@
-.third-container{
+.item{
+    height: 27.95rem;
+    min-width: 100rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
-    justify-content:space-evenly;
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.inner-carousel{
+    display: flex;
     background-color:#A48F78;
 }
 
-.options{
-    width: 30vw;
-    height: 30vh;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+.carousel{
+    cursor: grab;
+    overflow: hidden;
+    background-color:#A48F78;
 }

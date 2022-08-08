@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #A48F78;
+    font-family: 'Taviraj', serif;
 }
 
 .nav-links {
@@ -26,6 +27,7 @@
     font-weight: bold;
   }
 
+
 .logo{
     font-size: 2rem;
     color: white;
@@ -34,3 +36,7 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.nav-container a:hover {
+    color: white;
+  }
