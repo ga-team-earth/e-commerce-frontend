@@ -28,6 +28,19 @@ const TitleTwo = () => {
       })
   }, [])
 
+  const handleClick = function(event) {
+    let artName = event.target.getAttribute('name')
+    let artPrice = event.target.getAttribute('price')
+    let artQuantity = 1
+    let newCartItem = {"items": [{
+      "name": artName,
+      "price": artPrice,
+      "quantity": artQuantity,
+    }]}
+    // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+    axios.post('http://localhost:8000/cart', newCartItem)
+  }
+
   return (
     <>
         <motion.h1 exit="exit" variants={titleAnim} initial="hidden" animate="show"className='title'>{titleState.title}</motion.h1>
@@ -40,7 +53,13 @@ const TitleTwo = () => {
             <div className='footer'>
               <span className='name' key={index}>{artItem.name}</span>
               <span className='price'>${artItem.price}</span>
-              <button>Add to Cart</button>
+              <button 
+                onClick={handleClick}
+                name={artItem.name} 
+                price={artItem.price}             
+              >
+                Add to Cart
+              </button>
             </div>
         </motion.div>
       )

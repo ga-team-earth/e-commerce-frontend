@@ -6,20 +6,22 @@ import {motion} from "framer-motion";
 import { titleAnim } from '../../Animation';
 import {pageAnimation} from "../../Animation";
 
-
 const TitleOne = () => {
 
   const [artItems, setArtItems] = useState([])
   const [titleState, setTitleState] = useState([])
   const [widthTwo, setWidthTwo] = useState(0);
   const carouselTwo = useRef();
-  const [cartItem, setCartItem] = useState({})
+
+  // const [cartItem, setCartItem] = useState({})
+
+  
+
 
   useEffect(() => {
     setWidthTwo(1270)
   }, [])
   
-
   useEffect(() => {
     axios.get('https://e-commerce-earth.herokuapp.com/art')
       .then(res => {
@@ -30,17 +32,35 @@ const TitleOne = () => {
       })
   }, [])
 
+
+
+  // const handleClick = function(event) {
+  //   let artName = event.target.getAttribute('name')
+  //   let artPrice = event.target.getAttribute('price')
+  //   let artQuantity = 1
+  //   setCartItem({
+  //                 "items": [{
+  //                   "name": artName,
+  //                   "price": artPrice,
+  //                   "quantity": artQuantity,
+  //                 }]})
+  //   // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+  //   axios.post('http://localhost:8000/cart', cartItem)
+  // }
+
   const handleClick = function(event) {
-    // console.log(event.target)
-    // console.log(event.target.getAttribute('item'))
-    // setCartItem({...cartItem, [event.target.id]: event.target.value})
-    let artName = event.target.getAttribute('item')
-    setCartItem({title: artName})
-    // console.log(cartItem)
-    axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+    let artName = event.target.getAttribute('name')
+    let artPrice = event.target.getAttribute('price')
+    let artQuantity = 1
+    let newCartItem = {"items": [{
+      "name": artName,
+      "price": artPrice,
+      "quantity": artQuantity,
+    }]}
+    // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+    axios.post('http://localhost:8000/cart', newCartItem)
   }
 
-  console.log(cartItem)
 
   return (
     <>
@@ -54,7 +74,15 @@ const TitleOne = () => {
             <div className='footer'>
               <span className='name' key={index}>{artItem.name}</span>
               <span className='price'>${artItem.price}</span>
-              <button onClick={handleClick} item={artItem.name} >Add to Cart</button>
+
+              <button 
+                onClick={handleClick}
+                name={artItem.name} 
+                price={artItem.price}             
+              >
+                Add to Cart
+              </button>
+
             </div>
         </motion.div>
       )
