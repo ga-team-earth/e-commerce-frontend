@@ -12,7 +12,11 @@ const TitleOne = () => {
   const [titleState, setTitleState] = useState([])
   const [widthTwo, setWidthTwo] = useState(0);
   const carouselTwo = useRef();
+
   // const [cartItem, setCartItem] = useState({})
+
+  
+
 
   useEffect(() => {
     setWidthTwo(1270)
@@ -27,6 +31,7 @@ const TitleOne = () => {
         setTitleState(titleOne)
       })
   }, [])
+
 
 
   // const handleClick = function(event) {
@@ -56,6 +61,7 @@ const TitleOne = () => {
     axios.post('http://localhost:8000/cart', newCartItem)
   }
 
+
   return (
     <>
         <motion.h1 exit="exit" variants={titleAnim} initial="hidden" animate="show" className='title'>{titleState.title}</motion.h1>
@@ -68,6 +74,7 @@ const TitleOne = () => {
             <div className='footer'>
               <span className='name' key={index}>{artItem.name}</span>
               <span className='price'>${artItem.price}</span>
+
               <button 
                 onClick={handleClick}
                 name={artItem.name} 
@@ -75,6 +82,7 @@ const TitleOne = () => {
               >
                 Add to Cart
               </button>
+
             </div>
         </motion.div>
       )
