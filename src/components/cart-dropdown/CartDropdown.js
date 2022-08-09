@@ -18,6 +18,10 @@ const CartDropdown = () => {
       })
   }, [])
 
+  const handleClick = function(event) {
+    axios.delete('http://localhost:8000/cart')
+  }
+
   console.log(cartItems)
   // console.log(cartItems[0].items[0].name)
 
@@ -31,7 +35,7 @@ const CartDropdown = () => {
 
 
       </div>
-        <button className='checkout-button'>Checkout</button>
+        <button className='checkout-button' onClick={handleClick}>Checkout</button>
     </motion.div>
 
   )
