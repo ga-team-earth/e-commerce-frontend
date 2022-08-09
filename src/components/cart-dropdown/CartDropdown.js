@@ -8,7 +8,7 @@ import axios from 'axios';
 const CartDropdown = () => {
 
   const[cartItems, setCartItems] = useState([])
-  const[cartTotal, setCartTotal] = useState([])
+  const[cartTotal, setCartTotal] = useState(0)
 
   useEffect(() => {
     // axios.get('https://e-commerce-earth.herokuapp.com/cart')
@@ -18,10 +18,14 @@ const CartDropdown = () => {
         setCartItems(data)
         return data
       })
-      .then(res => {
-        let sum=0
-        let cartStuff = res.data
-        console.log(cartStuff)
+      .then((data) => {
+        let cartArray = []
+        for (let i=0; i < data.length; i+=1) {
+          let price=data[i].items[0].price
+          cartArray.push(price) 
+          let newSum = cartArray.reduce((a,b)=>a+b)
+          setCartTotal(newSum)
+        }
       })
       }, [])
 
@@ -30,18 +34,18 @@ const CartDropdown = () => {
     window.location.reload(false);
   }
 
-
-
   return (
-
+<>
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
         <p key={index}>{cartItem.items[0].name}, USD {cartItem.items[0].price}</p>
         ))}
       </div>
+      <p>{cartTotal}</p>
         <button className='checkout-button' onClick={handleClick}>Checkout</button>
     </motion.div>
+    </>
 
   )
 }
