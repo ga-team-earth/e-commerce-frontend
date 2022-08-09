@@ -39,10 +39,10 @@ const CartDropdown = () => {
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
-        <p key={index}>{cartItem.items[0].name}, USD {cartItem.items[0].price}</p>
+        <p key={index}>{cartItem.items[0].name}, USD {cartItem.items[0].price}, Quantity: {cartItem.items[0].quantity}</p>
         ))}
       </div>
-      <p>{cartTotal}</p>
+      <p>Cart Total: USD {cartTotal}</p>
         <button className='checkout-button' onClick={handleClick}>Checkout</button>
     </motion.div>
     </>
