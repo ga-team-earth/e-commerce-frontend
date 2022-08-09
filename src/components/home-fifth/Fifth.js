@@ -15,10 +15,10 @@ const Fifth = () => {
     <div className="footer-container">
         <h3>Connect with us on social media</h3>
         <div className='social-icons'>
-            <a className='social' href="#"><FaFacebook/></a>
-            <a className='social' href="#"><FaYoutube/></a>
-            <a className='social' href="#"><FaInstagram/></a>
-            <a className='social' href="#"><FaTwitter/></a>
+            <a className='social' href="www.google.com"><FaFacebook/></a>
+            <a className='social' href="www.google.com"><FaYoutube/></a>
+            <a className='social' href="www.google.com"><FaInstagram/></a>
+            <a className='social' href="www.google.com"><FaTwitter/></a>
         </div>
     </div>
   )

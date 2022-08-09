@@ -2,8 +2,8 @@
 
 import React from 'react'
 import "./Shop.scss"
-import {useState, useEffect } from 'react'
-import axios from 'axios'
+// import {useState, useEffect } from 'react'
+// import axios from 'axios'
 import TitleOne from './TitleOne'
 import TitleTwo from './TitleTwo'
 import TitleThree from './TitleThree'
