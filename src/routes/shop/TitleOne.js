@@ -33,7 +33,6 @@ const TitleOne = () => {
   }, [])
 
 
-
   // const handleClick = function(event) {
   //   let artName = event.target.getAttribute('name')
   //   let artPrice = event.target.getAttribute('price')
@@ -57,7 +56,7 @@ const TitleOne = () => {
       "price": artPrice,
       "quantity": artQuantity,
     }]}
-    // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+    // axios.post('https://e-commerce-earth.herokuapp.com/cart', newCartItem)
     axios.post('http://localhost:8000/cart', newCartItem)
   }
 
