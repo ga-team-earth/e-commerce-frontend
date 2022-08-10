@@ -16,10 +16,12 @@ const about = () => {
           <h2>Francisco & Anette Diopani</h2>
         </div>
         <div className='story'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, soluta possimus voluptas voluptatem minus, excepturi tenetur amet iusto sapiente culpa modi sed distinctio delectus? Tenetur corrupti ullam consequatur. Veritatis, repudiandae?
-          Omnis aperiam nostrum natus animi corrupti placeat sint iusto reiciendis voluptate, consequuntur nesciunt esse nihil, quae dolor veniam aut earum nemo cumque recusandae temporibus reprehenderit libero? Alias architecto minima facere!
-          Consequatur laborum eaque voluptates maiores iusto sint, est similique neque quo quas quod dolores consectetur tempora facere iste esse dolorem! Provident expedita ad fugiat reprehenderit velit voluptas, vero odit explicabo!
-          Consequatur laborum eaque voluptates maiores iusto sint, est similique neque quo quas quod dolores consectetur tempora facere iste esse dolorem! Provident expedita ad fugiat reprehenderit velit voluptas, vero odit explicabo!
+          <p>After retiring in 2008 from an illustrious career in finance management, the Diopani’s moved deep into the Rocky Mountains and started selling high quality, one of a kind art prints to a wide variety of international clientele.<br></br><br></br>
+
+Believing that beauty is a state of mind informed by who and what you surround yourself with, the Diopanis draw inspiration from the awesome splendor of the outdoors.  Having isolated themselves in the woods, they offer a selection of offerings that are uniquely selected to reflect the beauty and ambience of their surroundings.<br></br><br></br> 
+
+The Blank Canvas guarantees expedient delivery and peak customer service to ensure an experience of world class artistry in the comfort of your own home. Join us in our little tranche of heaven!
+
           </p>
         </div>
       </motion.div>

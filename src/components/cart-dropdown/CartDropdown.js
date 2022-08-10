@@ -4,15 +4,19 @@ import {motion} from "framer-motion";
 import { cartAnim } from '../../Animation';
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+import {AiFillRightCircle} from "react-icons/ai";
+import {AiFillLeftCircle} from "react-icons/ai";
 
 const CartDropdown = () => {
 
   const[cartItems, setCartItems] = useState([])
   const[cartTotal, setCartTotal] = useState(0)
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // axios.get('https://e-commerce-earth.herokuapp.com/cart')
-    axios.get('http://localhost:8000/cart')
+    axios.get('https://e-commerce-earth.herokuapp.com/cart')
+    // axios.get('http://localhost:8000/cart')
       .then(res => {
         let data = res.data
         setCartItems(data)
@@ -29,19 +33,19 @@ const CartDropdown = () => {
       })
       }, [cartItems])
 
+
   const handleClick = function(event) {
-    axios.delete('http://localhost:8000/cart')
+    axios.delete('https://e-commerce-earth.herokuapp.com/cart')
+    // axios.delete('http://localhost:8000/cart')
     window.location.reload(false);
+
   }
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
-    // console.log(itemQuantity)
-    // let itemQuantity = cartItem.items.quantity + 1
-    // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
-    axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
-
+    axios.patch(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`, itemQuantity)
+    // axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
   }
 
   // console.log(cartItems.items.img)
@@ -52,6 +56,7 @@ const CartDropdown = () => {
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
         <>
+
         <div key={index}>
         <p onClick={quantityClick}
           quantity={cartItem.items.quantity}
@@ -63,8 +68,8 @@ const CartDropdown = () => {
         ))}
         
       </div>
-      <p>Cart Total: USD {cartTotal}</p>
-      <button className='checkout-button' onClick={handleClick}>Checkout</button>
+      <p className='total'>Cart Total: USD {cartTotal}</p>
+      <button className='checkout-button' onClick={goToOrderHandler}>Checkout</button>
     </motion.div>
     </>
 
