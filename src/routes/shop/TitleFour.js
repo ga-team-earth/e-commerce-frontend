@@ -31,11 +31,11 @@ const TitleFour = () => {
     let artName = event.target.getAttribute('name')
     let artPrice = event.target.getAttribute('price')
     let artQuantity = 1
-    let newCartItem = {"items": [{
+    let newCartItem = {"items": {
       "name": artName,
       "price": artPrice,
       "quantity": artQuantity,
-    }]}
+    }}
     // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
     axios.post('http://localhost:8000/cart', newCartItem)
   }
