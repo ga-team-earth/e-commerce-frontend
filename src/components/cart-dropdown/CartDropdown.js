@@ -4,11 +4,15 @@ import {motion} from "framer-motion";
 import { cartAnim } from '../../Animation';
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+import {AiFillRightCircle} from "react-icons/ai";
+import {AiFillLeftCircle} from "react-icons/ai";
 
 const CartDropdown = () => {
 
   const[cartItems, setCartItems] = useState([])
   const[cartTotal, setCartTotal] = useState(0)
+  const navigate = useNavigate();
 
   useEffect(() => {
     // axios.get('https://e-commerce-earth.herokuapp.com/cart')
@@ -29,9 +33,8 @@ const CartDropdown = () => {
       })
       }, [cartItems])
 
-  const handleClick = function(event) {
-    axios.delete('http://localhost:8000/cart')
-    window.location.reload(false);
+  const goToOrderHandler = () => {
+    navigate('/Order')
   }
 
   const quantityClick = function(event) {
@@ -49,6 +52,7 @@ const CartDropdown = () => {
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
         <>
+
         <div key={index}>
         <p onClick={quantityClick}
           quantity={cartItem.items.quantity}
@@ -60,8 +64,8 @@ const CartDropdown = () => {
         ))}
         
       </div>
-      <p>Cart Total: USD {cartTotal}</p>
-      <button className='checkout-button' onClick={handleClick}>Checkout</button>
+      <p className='total'>Cart Total: USD {cartTotal}</p>
+      <button className='checkout-button' onClick={goToOrderHandler}>Checkout</button>
     </motion.div>
     </>
 
