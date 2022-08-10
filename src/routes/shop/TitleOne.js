@@ -32,30 +32,16 @@ const TitleOne = () => {
       })
   }, [])
 
-
-  // const handleClick = function(event) {
-  //   let artName = event.target.getAttribute('name')
-  //   let artPrice = event.target.getAttribute('price')
-  //   let artQuantity = 1
-  //   setCartItem({
-  //                 "items": [{
-  //                   "name": artName,
-  //                   "price": artPrice,
-  //                   "quantity": artQuantity,
-  //                 }]})
-  //   // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
-  //   axios.post('http://localhost:8000/cart', cartItem)
-  // }
-
   const handleClick = function(event) {
     let artName = event.target.getAttribute('name')
     let artPrice = event.target.getAttribute('price')
     let artQuantity = 1
-    let newCartItem = {"items": [{
+    let newCartItem = {"items": {
       "name": artName,
       "price": artPrice,
       "quantity": artQuantity,
-    }]}
+
+    }}
     // axios.post('https://e-commerce-earth.herokuapp.com/cart', newCartItem)
     axios.post('http://localhost:8000/cart', newCartItem)
   }
@@ -77,7 +63,7 @@ const TitleOne = () => {
               <button 
                 onClick={handleClick}
                 name={artItem.name} 
-                price={artItem.price}             
+                price={artItem.price}           
               >
                 Add to Cart
               </button>
