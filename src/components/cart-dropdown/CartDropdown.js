@@ -15,8 +15,8 @@ const CartDropdown = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // axios.get('https://e-commerce-earth.herokuapp.com/cart')
-    axios.get('http://localhost:8000/cart')
+    axios.get('https://e-commerce-earth.herokuapp.com/cart')
+    // axios.get('http://localhost:8000/cart')
       .then(res => {
         let data = res.data
         setCartItems(data)
