@@ -15,8 +15,8 @@ const CartDropdown = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://e-commerce-earth.herokuapp.com/cart')
-    // axios.get('http://localhost:8000/cart')
+    // axios.get('https://e-commerce-earth.herokuapp.com/cart')
+    axios.get('http://localhost:8000/cart')
       .then(res => {
         let data = res.data
         setCartItems(data)
@@ -33,19 +33,18 @@ const CartDropdown = () => {
       })
       }, [cartItems])
 
-
-  const handleClick = function(event) {
-    axios.delete('https://e-commerce-earth.herokuapp.com/cart')
-    // axios.delete('http://localhost:8000/cart')
-    window.location.reload(false);
-
+  const goToOrderHandler = () => {
+    navigate('/Order')
   }
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
+    // console.log(itemQuantity)
+    // let itemQuantity = cartItem.items.quantity + 1
+    // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
-    axios.patch(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`, itemQuantity)
-    // axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
+    axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
+
   }
 
   // console.log(cartItems.items.img)
@@ -56,14 +55,15 @@ const CartDropdown = () => {
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
         <>
-
-        <div key={index}>
-        <p onClick={quantityClick}
-          quantity={cartItem.items.quantity}
-          id={cartItem._id}
-        >{cartItem.items.name}, USD {cartItem.items.price}, Quantity: {cartItem.items.quantity}</p>
-        <img src={cartItem.items.imageUrl} alt='test'></img>
+        <div className='single-item' key={index}>
+          <img className='cart-image' src={cartItem.items.imageUrl} alt='test'></img>
+          <p onClick={quantityClick}
+            quantity={cartItem.items.quantity}
+            id={cartItem._id}
+          >
+          {cartItem.items.name}, USD {cartItem.items.price}</p>
         </div>
+        <p className='quantity'> <span className='left'><AiFillLeftCircle /></span>{cartItem.items.quantity}<span className='right'><AiFillRightCircle/></span></p>
         </>
         ))}
         
