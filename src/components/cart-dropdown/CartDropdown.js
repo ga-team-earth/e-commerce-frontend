@@ -21,17 +21,27 @@ const CartDropdown = () => {
       .then((data) => {
         let cartArray = []
         for (let i=0; i < data.length; i+=1) {
-          let price=data[i].items[0].price
+          let price=data[i].items.price
           cartArray.push(price) 
           let newSum = cartArray.reduce((a,b)=>a+b)
           setCartTotal(newSum)
         }
       })
-      }, [])
+      }, [cartItems])
 
   const handleClick = function(event) {
     axios.delete('http://localhost:8000/cart')
     window.location.reload(false);
+  }
+
+  const quantityClick = function(event) {
+    let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
+    console.log(itemQuantity)
+    // let itemQuantity = cartItem.items.quantity + 1
+    // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
+    let itemId = event.target.getAttribute('id')
+    axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
+
   }
 
   return (
@@ -39,11 +49,14 @@ const CartDropdown = () => {
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
-        <p key={index}>{cartItem.items[0].name}, USD {cartItem.items[0].price}, Quantity: {cartItem.items[0].quantity}</p>
+        <p key={index} onClick={quantityClick}
+          quantity={cartItem.items.quantity}
+          id={cartItem._id}
+        >{cartItem.items.name}, USD {cartItem.items.price}, Quantity: {cartItem.items.quantity}</p>
         ))}
       </div>
       <p>Cart Total: USD {cartTotal}</p>
-        <button className='checkout-button' onClick={handleClick}>Checkout</button>
+      <button className='checkout-button' onClick={handleClick}>Checkout</button>
     </motion.div>
     </>
 
