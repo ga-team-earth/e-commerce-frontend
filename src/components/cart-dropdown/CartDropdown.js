@@ -11,8 +11,8 @@ const CartDropdown = () => {
   const[cartTotal, setCartTotal] = useState(0)
 
   useEffect(() => {
-    // axios.get('https://e-commerce-earth.herokuapp.com/cart')
-    axios.get('http://localhost:8000/cart')
+    axios.get('https://e-commerce-earth.herokuapp.com/cart')
+    // axios.get('http://localhost:8000/cart')
       .then(res => {
         let data = res.data
         setCartItems(data)
@@ -30,18 +30,17 @@ const CartDropdown = () => {
       }, [cartItems])
 
   const handleClick = function(event) {
-    axios.delete('http://localhost:8000/cart')
+    axios.delete('https://e-commerce-earth.herokuapp.com/cart')
+    // axios.delete('http://localhost:8000/cart')
     window.location.reload(false);
   }
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
     let itemId = event.target.getAttribute('id')
-    axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
-
+    axios.patch(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`, itemQuantity)
+    // axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
   }
-
-  // console.log(cartItems.items.img)
 
   return (
 <>
