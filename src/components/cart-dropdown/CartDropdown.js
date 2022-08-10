@@ -43,7 +43,7 @@ const CartDropdown = () => {
     // let itemQuantity = cartItem.items.quantity + 1
     // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
-    axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
+    axios.patch(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`, itemQuantity)
 
   }
 
