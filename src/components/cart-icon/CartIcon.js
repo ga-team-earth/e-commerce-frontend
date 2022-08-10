@@ -12,7 +12,6 @@ const CartIcons = () => {
   return (
     <div className='cart-icon-container' onClick={toggleIsCartOpen}>
       <AiOutlineShopping className='shopping-icon' />
-      <span className='item-count'>0</span>
     </div>
   )
 }

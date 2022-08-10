@@ -30,7 +30,14 @@ const Order = () => {
 
 const checkoutClick = function(event) {
     axios.delete('https://e-commerce-earth.herokuapp.com/cart')
+    setCartTotal(0)
+
 }
+
+const removeClick = function(event) {
+    let itemId = event.target.getAttribute('id')
+    axios.delete(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`)
+  }
 
 return (
 
@@ -63,6 +70,12 @@ return (
                     <span>Price</span>
                     {cartItems.map((cartItem, index) => (
                         <ul>{cartItem.items.price}</ul>
+                    ))}
+                </div>
+                <div className='header-block'>
+                    <span>Remove?</span>
+                    {cartItems.map((cartItem, index) => (
+                        <button onClick={removeClick} id={cartItem._id}>Click to Remove</button>
                     ))}
                 </div>
             </div>
