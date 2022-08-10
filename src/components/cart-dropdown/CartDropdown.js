@@ -36,7 +36,7 @@ const CartDropdown = () => {
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
-    console.log(itemQuantity)
+    // console.log(itemQuantity)
     // let itemQuantity = cartItem.items.quantity + 1
     // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
@@ -44,16 +44,24 @@ const CartDropdown = () => {
 
   }
 
+  // console.log(cartItems.items.img)
+
   return (
 <>
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
-        <p key={index} onClick={quantityClick}
+        <>
+        <div key={index}>
+        <p onClick={quantityClick}
           quantity={cartItem.items.quantity}
           id={cartItem._id}
         >{cartItem.items.name}, USD {cartItem.items.price}, Quantity: {cartItem.items.quantity}</p>
+        <img src={cartItem.items.imageUrl} alt='test'></img>
+        </div>
+        </>
         ))}
+        
       </div>
       <p>Cart Total: USD {cartTotal}</p>
       <button className='checkout-button' onClick={handleClick}>Checkout</button>
