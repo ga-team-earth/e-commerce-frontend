@@ -4,6 +4,7 @@ import Shop from "./routes/shop/Shop";
 import About from "./routes/about/About";
 import Contact from "./routes/contact/Contact";
 import Nav from "./routes/navigation/Navigation";
+import Order from "./routes/order/Order";
 import "./App.scss"
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="Shop/*" element={<Shop />}/>
+        <Route path="/Order" element={<Order />}/>
       </Route>
     </Routes>
     </div>
