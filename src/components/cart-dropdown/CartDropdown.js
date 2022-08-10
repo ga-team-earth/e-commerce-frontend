@@ -36,9 +36,6 @@ const CartDropdown = () => {
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
-    // console.log(itemQuantity)
-    // let itemQuantity = cartItem.items.quantity + 1
-    // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
     axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
 
