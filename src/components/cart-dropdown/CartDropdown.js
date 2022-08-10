@@ -39,9 +39,6 @@ const CartDropdown = () => {
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
-    // console.log(itemQuantity)
-    // let itemQuantity = cartItem.items.quantity + 1
-    // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
     axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
 
@@ -55,15 +52,14 @@ const CartDropdown = () => {
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
         <>
-        <div className='single-item' key={index}>
-          <img className='cart-image' src={cartItem.items.imageUrl} alt='test'></img>
-          <p onClick={quantityClick}
-            quantity={cartItem.items.quantity}
-            id={cartItem._id}
-          >
-          {cartItem.items.name}, USD {cartItem.items.price}</p>
+
+        <div key={index}>
+        <p onClick={quantityClick}
+          quantity={cartItem.items.quantity}
+          id={cartItem._id}
+        >{cartItem.items.name}, USD {cartItem.items.price}, Quantity: {cartItem.items.quantity}</p>
+        <img src={cartItem.items.imageUrl} alt='test'></img>
         </div>
-        <p className='quantity'> <span className='left'><AiFillLeftCircle /></span>{cartItem.items.quantity}<span className='right'><AiFillRightCircle/></span></p>
         </>
         ))}
         

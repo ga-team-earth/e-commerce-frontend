@@ -30,13 +30,15 @@ const TitleSix = () => {
   const handleClick = function(event) {
     let artName = event.target.getAttribute('name')
     let artPrice = event.target.getAttribute('price')
+    let artImage = event.target.getAttribute('img')
     let artQuantity = 1
     let newCartItem = {"items": {
       "name": artName,
+      "imageUrl": artImage,
       "price": artPrice,
-      "quantity": artQuantity,
+      "quantity": artQuantity
     }}
-    // axios.post('https://e-commerce-earth.herokuapp.com/cart', cartItem)
+    // axios.post('https://e-commerce-earth.herokuapp.com/cart', newCartItem)
     axios.post('http://localhost:8000/cart', newCartItem)
   }
 
@@ -55,7 +57,8 @@ const TitleSix = () => {
           <button 
                 onClick={handleClick}
                 name={artItem.name} 
-                price={artItem.price}             
+                price={artItem.price}
+                img={artItem.imageUrl}           
               >
                 Add to Cart
               </button>
