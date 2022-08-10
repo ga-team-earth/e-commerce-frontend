@@ -2,8 +2,13 @@ import React from 'react'
 import "./Order.scss"
 import { motion } from "framer-motion"
 import {pageAnimation} from "../../Animation"
+import axios from 'axios'
 
 const Order = () => {
+
+const checkoutClick = function(event) {
+    axios.delete('https://e-commerce-earth.herokuapp.com/cart')
+}
 
   return (
 
