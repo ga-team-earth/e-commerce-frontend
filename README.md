@@ -27,9 +27,13 @@ Type the following:
 npm i
 npm i axios
 npm i framer-motion
+npm i react-icons
+npm i sass
+npm i scss
 npm i react-router-dom
 npm i react-bootstrap bootstrap
 npm i react-intersection-observer --save
+
 ```
 
 ## Direct Link to Project
