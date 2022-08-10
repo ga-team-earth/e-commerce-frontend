@@ -48,6 +48,8 @@ const CartDropdown = () => {
     // axios.patch(`http://localhost:8000/cart/${itemId}`, itemQuantity)
   }
 
+  // console.log(cartItems.items.img)
+
   return (
 <>
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>

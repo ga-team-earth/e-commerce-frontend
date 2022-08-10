@@ -38,8 +38,10 @@ const TitleSix = () => {
       "price": artPrice,
       "quantity": artQuantity
     }}
+
     axios.post('https://e-commerce-earth.herokuapp.com/cart', newCartItem)
     // axios.post('http://localhost:8000/cart', newCartItem)
+
   }
 
   return (
