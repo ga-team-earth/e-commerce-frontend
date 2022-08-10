@@ -4,11 +4,15 @@ import {motion} from "framer-motion";
 import { cartAnim } from '../../Animation';
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+import {AiFillRightCircle} from "react-icons/ai";
+import {AiFillLeftCircle} from "react-icons/ai";
 
 const CartDropdown = () => {
 
   const[cartItems, setCartItems] = useState([])
   const[cartTotal, setCartTotal] = useState(0)
+  const navigate = useNavigate();
 
   useEffect(() => {
     // axios.get('https://e-commerce-earth.herokuapp.com/cart')
@@ -29,14 +33,13 @@ const CartDropdown = () => {
       })
       }, [cartItems])
 
-  const handleClick = function(event) {
-    axios.delete('http://localhost:8000/cart')
-    window.location.reload(false);
+  const goToOrderHandler = () => {
+    navigate('/Order')
   }
 
   const quantityClick = function(event) {
     let itemQuantity = {"items.quantity":parseInt(event.target.getAttribute('quantity')) + 1}
-    console.log(itemQuantity)
+    // console.log(itemQuantity)
     // let itemQuantity = cartItem.items.quantity + 1
     // let itemQuantity={"items.quantity": event.target.cartItems.items.quantity +1}
     let itemId = event.target.getAttribute('id')
@@ -44,19 +47,29 @@ const CartDropdown = () => {
 
   }
 
+  // console.log(cartItems.items.img)
+
   return (
 <>
     <motion.div exit="exit" variants={cartAnim} initial="hidden" animate="show" className='cart-dropdown-container'>
       <div className='checkout-items'>
       {cartItems.map((cartItem, index) => (
-        <p key={index} onClick={quantityClick}
-          quantity={cartItem.items.quantity}
-          id={cartItem._id}
-        >{cartItem.items.name}, USD {cartItem.items.price}, Quantity: {cartItem.items.quantity}</p>
+        <>
+        <div className='single-item' key={index}>
+          <img className='cart-image' src={cartItem.items.imageUrl} alt='test'></img>
+          <p onClick={quantityClick}
+            quantity={cartItem.items.quantity}
+            id={cartItem._id}
+          >
+          {cartItem.items.name}, USD {cartItem.items.price}</p>
+        </div>
+        <p className='quantity'> <span className='left'><AiFillLeftCircle /></span>{cartItem.items.quantity}<span className='right'><AiFillRightCircle/></span></p>
+        </>
         ))}
+        
       </div>
-      <p>Cart Total: USD {cartTotal}</p>
-      <button className='checkout-button' onClick={handleClick}>Checkout</button>
+      <p className='total'>Cart Total: USD {cartTotal}</p>
+      <button className='checkout-button' onClick={goToOrderHandler}>Checkout</button>
     </motion.div>
     </>
 
