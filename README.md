@@ -13,11 +13,11 @@ Devontae Ferguson, Kate Southerland, Joshua Romatowski, (Aldo Pagani Jr.)
 - MongoDb
 - Express
 
-## Screenshots of Website
+<!-- ## Screenshots of Website
 
 ```bash
 PUT IMAGES HERE
-```
+``` -->
 
 ## Installation Guide
 
@@ -42,7 +42,7 @@ npm i react-intersection-observer --save
 ## Direct Link to Project
 
 ```bash 
-PUT URL HERE
+https://theblankcanvas.netlify.app/
 ```
 
 ## User Stories
@@ -68,6 +68,7 @@ PUT URL HERE
 - Have a functioning cart that can successfully create, show, update, and delete items
 
 ## Stretch Goals
+
 - A working navigation with a search function
 - Have the contact form lead somewhere and/or return a confirmation to the user
 - Have a functioning checkout process with possible payment processing 
@@ -77,6 +78,7 @@ PUT URL HERE
 - Be able to store user data for current or future
 - Make painting database descriptions more robust
 - Possibly make individual painting pages
+- Button pressing fixed on cart
 
 ## Wireframes
 
