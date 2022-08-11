@@ -7,8 +7,6 @@ import {FaTrashAlt} from "react-icons/fa"
 import PaymentForm from "../../components/payment-form/PaymentForm"
 
 
-
-
 const Order = () => {
 
     const[cartItems, setCartItems] = useState([])
@@ -33,11 +31,10 @@ const Order = () => {
             })
             }, [cartItems])
 
-
 const removeClick = function(event) {
     let itemId = event.target.getAttribute('id')
     axios.delete(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`)
-}
+  }
 
 return (
 
