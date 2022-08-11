@@ -25,11 +25,18 @@ Type the following:
 
 ```bash
 npm i
+npm i stripe
+npm i @stripe/stripe-js
+npm i @stripe/react-stripe-js
 npm i axios
 npm i framer-motion
+npm i react-icons
+npm i sass
+npm i scss
 npm i react-router-dom
 npm i react-bootstrap bootstrap
 npm i react-intersection-observer --save
+
 ```
 
 ## Direct Link to Project
