@@ -1,31 +1,99 @@
-.about-container{
+.contact-container{
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
     background-color: #A48F78;
     height: 95vh;
+    font-family: 'Taviraj', serif;
+
+    @media (max-width: 1000px){
+        justify-content: center;
+    }
+
+    @media (max-width: 1000px){
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color:#FCF9EE;
+    }
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 400px;
+    max-height: 68vh;
+	max-width: 40vw;
+	padding: 50px;
+	background: #FCF9EE;
+    border-radius: 16px;
+    margin-left: 3rem;
+    
+    @media (max-width: 1000px){
+        border: 2px solid #A48F78;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        min-width: 350px;
+        height: 500px;
+        margin-left: 0;
+     }
+}
+
+
+.contact{
+    color: #A48F78;
+    padding-bottom: 1rem;
+}
+
+
+.name{
+    min-height: 2rem;
+    border: none;
+    border-radius: 16px;  
+    margin-bottom: .5rem;
+    padding: 10px;
     font-family: 'Poppins', sans-serif;
 }
 
-.text-container{
-    padding-left: 5rem;
+.email{
+    min-height: 2rem;
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.top-heading{
-    padding-top: 3rem;
+.message{
+    border: none;
+    border-radius: 16px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.send{
+    border-radius: 16px;
+    border: none;
+    min-height: 2rem;
+    padding: 10px;
+    background-color: #A48F78;
     color: white;
-    font-family: 'Taviraj', serif;
 }
 
-.couple{
-    width: 30vw;
-    height: 60vh;
-    padding-top: 2rem;
-}
+.contact-pic{
+    width: 28rem;
+    height: 35rem;
+    margin-right: 3rem;
 
-.story{
-    width: 40vw;
-    padding-top: 2rem;
-    color: white;
+    @media (max-width: 1000px){
+        margin-top: 3rem;
+        padding-top: 0;
+        padding-left: 0;
+        width: 350px;
+        height: 500px;
+        border: 2px solid #A48F78;
+        margin-right: 0;
+     }
 }
