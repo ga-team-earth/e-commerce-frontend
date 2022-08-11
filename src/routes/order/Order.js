@@ -33,10 +33,11 @@ const Order = () => {
             })
             }, [cartItems])
 
+
 const removeClick = function(event) {
     let itemId = event.target.getAttribute('id')
     axios.delete(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`)
-  }
+}
 
 return (
 
