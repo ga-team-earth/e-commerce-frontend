@@ -25,6 +25,9 @@ Type the following:
 
 ```bash
 npm i
+npm i stripe
+npm i @stripe/stripe-js
+npm i @stripe/react-stripe-js
 npm i axios
 npm i framer-motion
 npm i react-icons
