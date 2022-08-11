@@ -2,12 +2,41 @@
 
 We are making an online storefront for selling art prints, called "The Blank Canvas". We want people to be able to populate a cart and checkout from the store.
 
+## Group Members
+
+Devontae Ferguson, Kate Southerland, Joshua Romatowski, (Aldo Pagani Jr.)
+
 ## Technologies Used
 
 - React
 - Sass
 - MongoDb
 - Express
+
+## Screenshots of Website
+
+```bash
+PUT IMAGES HERE
+```
+
+## Installation Guide
+
+Type the following:
+
+```bash
+npm i
+npm i axios
+npm i framer-motion
+npm i react-router-dom
+npm i react-bootstrap bootstrap
+npm i react-intersection-observer --save
+```
+
+## Direct Link to Project
+
+```bash 
+PUT URL HERE
+```
 
 ## User Stories
 
@@ -17,7 +46,6 @@ We are making an online storefront for selling art prints, called "The Blank Can
 - As a user, I would like to save paintings that I like or hope to purchase in my own personal cart or saved list *Stretch*
 - As a user, I would like to possibly look for specific paintings by name, possibly even type or catagory. *Stretch*
 - As a user, I would like to be able to submit my own paintings for review and possible sale *Super Stretch* 
-
 
 ## MVP
 

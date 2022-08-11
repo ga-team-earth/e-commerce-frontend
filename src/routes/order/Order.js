@@ -30,14 +30,14 @@ const Order = () => {
 
 const checkoutClick = function(event) {
     axios.delete('https://e-commerce-earth.herokuapp.com/cart')
-    setCartTotal(0)
+    window.location.reload(false)
 
 }
 
 const removeClick = function(event) {
     let itemId = event.target.getAttribute('id')
     axios.delete(`https://e-commerce-earth.herokuapp.com/cart/${itemId}`)
-  }
+}
 
 return (
 
